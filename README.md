@@ -113,13 +113,14 @@ import csv ##(module imports tools for reading and writing data in CSV format).
     at the end of the dataframe 
    
 1. Create a variable named 'df_final' and set it equal to a merged dataframe for df and  
-   crime_type_value_counts. Use the function pd.concat[()] to join the two dataframes. Print    the final iteration of the merged  dataframes (df_final).
+   crime_type_value_counts. Use the function pd.concat[()] to join the two dataframes. Print the final iteration of the merged  
+   dataframes (df_final).
   
 1. Input the following command to write df_final to a .csv file entitled "df_final.csv."
 
-df_final.to_csv("df_final.csv", index = False, header = True, sep = ',', encoding = 'utf-8')   
+   df_final.to_csv("df_final.csv", index = False, header = True, sep = ',', encoding = 'utf-8')   
 
-Script#2: Weather.py
+## Script 2: Weather.py
 
 2. Import pandas as pd, numpy as np, import csv
 2. Print "Weather Dataset"
@@ -141,7 +142,7 @@ Script#2: Weather.py
    'Date','Max TemperatureF', 'Mean TemperatureF', 'Min TemperatureF','Max 
     Humidity', ' Mean Humidity', ' Min Humidity', 'PrecipitationIn']]
     
-Script #3: Unemployment.py
+## Script 3: Unemployment.py
 
 3. import modules: pandas as pd, numpy as  np, import csv
 3. import the .csv file for unemployment data in Chicago by creating a variable, 
@@ -175,7 +176,7 @@ Script#4: crime_project_merge.py
   
  4. Write the dataframe into a .csv file titled "crime_info1.csv")
    
-Script#5 graphs.py
+## Script 5 graphs.py
 
 ##Basic Data Visaulization utilizing Matplotlib to create bar and pie graphs for columns 'crime type' and 'location description' by crime count.
 
@@ -218,7 +219,7 @@ import plotly.express as px
                   
   5. Save bar graph as a .png file. 
   
-  ##Pie Chart
+  ## Pie Chart
   
   5. Create a variable called 'labels' and set it equal to a list of crime types noted in the 'objects' variable for bar  
      graph. Create a variable called sizes and set it equal to a list of  descending values noted in the 'Percentage' column      of crime_type_value_counts.head(10)). On the next line, create a variable called 'colors' and set it equal to a list of
