@@ -25,30 +25,50 @@ import csv
 
 print("Weather Dataset")
 
-#Read the CSV file to a Dataframe entitled Weather
+#%%Read the CSV file to a Dataframe entitled Weather
+
 
 weather = pd.read_csv("weather.csv")
+
+#%% Review columns, first five rows and dataframe information
 print(weather.columns)
 print(weather.head(5))
 print(weather.info())
 
+#%% Split the 'Date' key utilizing the  module 'datetime' into a format Pandas can accept. 
+##The 'Date' key wil be split into 'Months' and 'Year' columns', the later of which will be utilized to m
+#merge the datafiles. 
 
-#Grouped Weather Data on 'Date' key
+weather['Datetime'] = pd.to_datetime(weather.Date, format='%Y/%m/%d')
+weather['Date'] = weather['Datetime'].apply(lambda x:x.date())
+weather['Month'] = weather['Datetime'].apply(lambda x:x.month)
+weather['Year'] = weather['Datetime'].apply(lambda x:x.year)
 
-grouped_weather = weather.groupby(['Date']).mean().reset_index()
+print(weather.Year)
 
-grouped_weather = grouped_weather[['Date', 'Max TemperatureF', 'Mean TemperatureF',
+#%%The  groupby function will enable us to split the data into  
+   #groups based on the 'Year' key, apply the 'group' function to each element  
+  # and combine the results into a dataframe ('grouped_weather'). Make sure to 
+  #reset the index, or the 'Year' key will not be included. 
+
+
+grouped_weather = weather.groupby(['Year']).mean().reset_index()
+
+
+#%%Add keys to the dataframe
+
+grouped_weather = grouped_weather[['Year', 'Max TemperatureF', 'Mean TemperatureF',
        'Min TemperatureF','Max Humidity', ' Mean Humidity', ' Min Humidity',
        'PrecipitationIn']]
 
-print(grouped_weather.head(5))
+grouped_weather.head()
 
 print(grouped_weather.info())
 print(grouped_weather.columns)
 
-weather_columns_list = ['Max TemperatureF', 'Mean TemperatureF',
-       'Min TemperatureF', 'Max Humidity', ' Mean Humidity', ' Min Humidity',
-       ' Max Wind SpeedMPH', ' Mean Wind SpeedMPH', 'PrecipitationIn']
+#%% Copy to a .csv file for merging later 
+grouped_weather.to_csv("grouped_weather.csv", index = False, header = True, sep = ',', encoding = 'utf-8')
+
 
 
 
