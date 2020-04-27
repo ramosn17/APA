@@ -48,12 +48,12 @@ in 2010 and trended downard but remained at or above the longterm rate until dec
 steadily from 2015-2020. From an oberver's persective, the data from the spreadsheet
 shows that the highest crime counts are concentrated in the period listed above-2002, 2006
 and 2012 are years that appear in a filter for highest crime counts by type. The type highest
-crime type counts are 688289 (Theft) and 659057 (Battery), both of which occured in 2002, during
+crime type counts are 68828 (Theft) and 65905 (Battery), both of which occured in 2002, during
 a time of 6.6% unemployment. The third highest crime count, 528234 for the crime type Theft occured in
 2012 under an unemployment rate of 9%. Certain spikes in unemployment hold a certain amount of explanatory
 power (acknowledging the variety of omitted variables that have an affect on unemployment rate)-for example,
 the total count for Theft almost doubled from 2001-2002, with an unemployment rate that surged from
-5.1% to 6.6%, with a 2002 Theft crime count of 688,289. While higher unemployment does not necessarily necessitate
+5.1% to 6.6%, with a 2002 Theft crime count of 68828. While higher unemployment does not necessarily necessitate
 the highest crime count (Theft in 2010 @ 11.3% unemployment hovered around 153512), it is still a powerful explanatory
 variable in assessing crime rate trends.
 
@@ -61,17 +61,17 @@ The merge script contains a groupby() command for 'Primary Type', 'Mean Temperat
 by 'counts.' It is important to keep in mind that these counts are groupe by 'Month', while the unemployment rate groupby()
 used 'Year', so counts will be much smaller.
 
-Excel Filtering by Crime counts, the highest crime count, 99,265 for Theft in 2001 does not correspond to the highest average
+Excel Filtering by Crime counts, the highest crime count, 9926 for Theft in 2001 does not correspond to the highest average
 Max temperature, but falls closely within the top ten count for yearly Max Temperatures in the dataset. With a year average max temperature of
 64.6 degrees F, there is a strong relationship beetween the highest crime counts and the years that exhibit the highest year Max Temperature,as the crime counts in the
 highest ten all occur during years with max temperatures of 58 degrees and above.
 
 Sorting by Mean temperatureF, the first observation made is on the effect of the minimum mean tempearture and crime count. The lowest mean temperatureF
-registers at 23.16 degrees and corresponds to a Theft Crime count of 61,565 (2014). The crime counts for narcotics during 2014 (again, the year with the
+registers at 23.16 degrees and corresponds to a Theft Crime count of 6156 (2014). The crime counts for narcotics during 2014 (again, the year with the
 lowest  average temperature for the year) holds an even greater impact on robbery crime counts (9799), criminal tresspassing (7539) and homicide (426). While
 this may have been an anomoly, an obsevation regarding the next coldest mean temperature, 48.96 degrees, exhibits a Theft crime count of 999875, followed by Battery (88379)
-and Criminal Damage (55011). As the average temperature increases, the magnitude of the highest frequency crime types increases in a positive manner, although this is not always the case, as
-obseved from Theft crime type count in 2010 with an average temperature of 54 degrees registering at 76,759 (although the max temperature registers at 62.89 degrees, so we can assume
+and Criminal Damage (5501). As the average temperature increases, the magnitude of the highest frequency crime types increases in a positive manner, although this is not always the case, as
+obseved from Theft crime type count in 2010 with an average temperature of 54 degrees registering at 7675 (although the max temperature registers at 62.89 degrees, so we can assume
 a warmer year overall).
 
 While a significant portion of the data aligns follows an increase in crime type as the mean temperature increases, a wide variety of variables exist by year, county, police department etc.that
