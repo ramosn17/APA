@@ -59,7 +59,7 @@ The script should be run first, as its main function is to load the **Crimes_-_2
          print(crime_data.head(5))
          
   This will generate an output of the first five rows of the datafile, complete with   
-   corresponding values for each of the columns. 
+  corresponding values for each of the columns. 
    
 1. To manage colummns with NaN (missing values), employ the following call: 
        print(crime_data.columns[crime_data.isnull().any()].tolist())
@@ -93,7 +93,7 @@ The script should be run first, as its main function is to load the **Crimes_-_2
       'Primary Type' (the different types of crimes) and order them by their count 
        and percentage. To accomplish this task we can first include the attribute  
       .columns at the end of crime_type and set the dataframe equal to the column          
-      list 'Crime Type' and 'Count.'
+       list 'Crime Type' and 'Count.'
          
    
    1. Now that we understand what our columns and values look like in the terminal,  
@@ -105,21 +105,20 @@ The script should be run first, as its main function is to load the **Crimes_-_2
       crime_type_value_counts = pd.DataFrame(df['Primary Type'].value_counts().reset_index()) 
    
    1. Review the columns for the new dataframe by including the attribute .columns at the end 
-       of crime_type_value_counts and       set it equal to column keys 'Crime Type' and 
-       'Count.'
+      of crime_type_value_counts and       set it equal to column keys 'Crime Type' and 
+      'Count.'
    
   
    1. To generate a percentage of each crime type as a fraction of the total amount of   
        frequently occuring crimes, set crime_type_value_counts['Percentage'] equal to the   
        the count key in the dataframe, crime_type_value_counts['Count'], divided by the sum 
-       of values in the         
-       'Counts' column and multiply by 100. The command should look as follows:
+       of values in the 'Counts' column and multiply by 100. The command should look as follows:
        
-   crime_type_value_counts['Percentage'] =
-   (crime_type_value_counts['Count']/crime_type_value_counts['Count'].sum())* 100   
+           crime_type_value_counts['Percentage'] =
+           (crime_type_value_counts['Count']/crime_type_value_counts['Count'].sum())* 100   
    
 1. Print the first ten elements of crime_type_value_counts by adding the attribute .head(10)) 
-    at the end of the dataframe 
+   at the end of the dataframe 
    
   
 ## Script 2: Weather.py
@@ -145,38 +144,36 @@ Slightly more involved, this script will load the **weather.csv** data, split th
     Humidity', ' Mean Humidity', ' Min Humidity', 'PrecipitationIn']]
     
 ## Script 3: Unemployment.py
+This script will import the unemployment datafile. 
 
 3. import modules: pandas as pd, numpy as  np, import csv
-3. import the .csv file for unemployment data in Chicago by creating a variable, 
-    'unemployment' and setting it equal to the function 
-     pd.read_csv("unemployment3.csv"
+3. import the .csv file for unemployment data in Chicago by creating a variable, 'unemployment' and setting it equal to the function 
+   pd.read_csv("unemployment3.csv"
     
 3. To review the complete result in the terminal, utilize the function 
    pd.set_option('display.max_columns', None).
    
 3. Print the first rows unemployment by adding the attribute .head(5))
 
-Script#4: crime_project_merge.py
+Script 4: crime_project_merge.py
+This script will merge all of the dataframes on the 'Year' key and generate a final dataframe called 'analysis_dataset', which will then be copied to a .csv file, "crime_info2.csv." The groupby() function will then generate reference .csv files for exploratory analysis, with the most important grouping incorporating 'Mean TemperatureF', 'Primary Type', 'Year' and 'Max/Min' Temperatures.   
+ Observations will be recorded in the Crime Results markdown. 
 
-4. import modules: pandas as pd, numpy as  np, import csv
 4. Utilize the pd.read_csv function to import the new .csv file, df_final.csv  
    and the original datafiles for weather and unemployment. 
    
-   df_final = pd.read_csv("df_final.csv")
-   weather = pd.read_csv("weather.csv")
-   unemployment = pd.read_csv("unemployment3.csv") 
+    df_final = pd.read_csv("df.csv")
+    weather = pd.read_csv("weather.csv")
+    unemployment = pd.read_csv("unemployment3.csv") 
    
- 4. Create a variable named 'analysis_dataset' and set it equal to the pd.merge     function. Within this function, we will merge df_final and weather on the  
-    'Date' key. The command will be as follows: 
-    
-    analysis_dataset = pd.merge(df_final, weather, on=['Date'])
+ 4. Create a variable named 'analysis_dataset' and set it equal to the pd.merge   
+     function. Within this function, we will merge df_final and weather on the 
+    'Year' key. 
     
  4. Use the same dataframe and set it equal to pd.merge() for analysis_dataset 
-      and unemployment on the 'Date' key. 
+      and unemployment on the 'Year' key. 
       
- 4. Print "Analysis Dataset Information" and then print the first five rows of      the dataframe. 
-  
- 4. Write the dataframe into a .csv file titled "crime_info1.csv")
+ 4. Write the dataframe into a .csv file titled "crime_info2.csv")
    
 ## Script 5 graphs.py
 
