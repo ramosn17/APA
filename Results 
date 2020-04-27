@@ -1,0 +1,80 @@
+##Crime, Weather & Unemployment Analysis
+
+In the 'crime_project_merge.py' script, we merged the data from
+'weather', 'crime from 2001' and 'unemployment' datafiles. This enables the
+integration of the groupby() function, which we can use to compare columns and
+explore the data.
+
+The Charts
+
+Using the 'graph.py' script, a handful of important observations come to surface.
+First, we can discern the most frequent crime types in Chicago from 2001-2020, with
+Theft, Battery and Criminal Damage retaining the top spots, followed by Assault, Other
+and Deceptive Practice close behind. Next, we can discern the highest occurances of crime
+by location type, showing that crimes most frequently occur on the street (29.6%),
+residence (21.5%) and apartment (16.7%) followed by sidewalk, other and parking garage.
+
+The next graph shows a periodic trend in the Number of Crimes per year from 2001-
+2020. This illustrates 'periodic' pattern in crimes, while an initial observation may
+surmise that crimes tend to surge and peak in the early period of the year, precipitously
+drop in the latter months and quickly increase following the beginning of the year.
+The graph also shows an overall decreasing trend for crime from 2001-2016, after
+which the peaks and low points remain relatively constant from 2016-2019, followed
+by a steep drop afterwards. Referring to the next graph, 'Rolling Sum of Crimes from
+'2001-2020', this graph provides a visual of each day as a representation of the sum
+of crimes from the previous year. While the previous graph demonstrated a decreasing trend,
+this visual provides a clear enough perspective of the trend to make a judgement call
+(if no other data was on hand). If the trend is deceasing, then we can state with a considerable
+measure of certainty that the overall crime rate had been decreasing for that year (likewise,
+if the sum is constant, then the crime rate largely remained unchanged). Despite
+a slight down tick in the later portion of 2020, the crime rate appears to be consistent
+from 2019-2020.
+
+For a more granular perspective, we can access graphs for individual crime types
+to gain a better understanding of how individual crime types are trending. The graph
+shows that the majority of crime types are trending downward (which may help explain
+the slight decrease in crime right exhibited in the rolling crimes graph). However,
+the surge of weapons violations, other narcotics violations, concealed carry and
+interference with a public officer may have mitigated the rolling sum downward trend.
+
+The Data
+
+The 'crime_project_merge.py' script contains two powerful groupby() function results
+that provide a framework to observe Chicago unemployment, crime and weather. The
+first file, 'unenmprate.csv', incorporates the following keys 'Year', 'unemployment rate'
+'year' and 'count.' External research offers a key stat-the long term average Unemployment
+rate in Chicago is 7.61% (unemp rate hovered at this level from 2003-2005, surged to a high of 12%
+in 2010 and trended downard but remained at or above the longterm rate until declining
+steadily from 2015-2020. From an oberver's persective, the data from the spreadsheet
+shows that the highest crime counts are concentrated in the period listed above-2002, 2006
+and 2012 are years that appear in a filter for highest crime counts by type. The type highest
+crime type counts are 688289 (Theft) and 659057 (Battery), both of which occured in 2002, during
+a time of 6.6% unemployment. The third highest crime count, 528234 for the crime type Theft occured in
+2012 under an unemployment rate of 9%. Certain spikes in unemployment hold a certain amount of explanatory
+power (acknowledging the variety of omitted variables that have an affect on unemployment rate)-for example,
+the total count for Theft almost doubled from 2001-2002, with an unemployment rate that surged from
+5.1% to 6.6%, with a 2002 Theft crime count of 688,289. While higher unemployment does not necessarily necessitate
+the highest crime count (Theft in 2010 @ 11.3% unemployment hovered around 153512), it is still a powerful explanatory
+variable in assessing crime rate trends.
+
+The merge script contains a groupby() command for 'Primary Type', 'Mean Temperature', 'Max Temperature' and indexed
+by 'counts.' It is important to keep in mind that these counts are groupe by 'Month', while the unemployment rate groupby()
+used 'Year', so counts will be much smaller.
+
+Excel Filtering by Crime counts, the highest crime count, 99,265 for Theft in 2001 does not correspond to the highest average
+Max temperature, but falls closely within the top ten count for yearly Max Temperatures in the dataset. With a year average max temperature of
+64.6 degrees F, there is a strong relationship beetween the highest crime counts and the years that exhibit the highest year Max Temperature,as the crime counts in the
+highest ten all occur during years with max temperatures of 58 degrees and above.
+
+Sorting by Mean temperatureF, the first observation made is on the effect of the minimum mean tempearture and crime count. The lowest mean temperatureF
+registers at 23.16 degrees and corresponds to a Theft Crime count of 61,565 (2014). The crime counts for narcotics during 2014 (again, the year with the
+lowest  average temperature for the year) holds an even greater impact on robbery crime counts (9799), criminal tresspassing (7539) and homicide (426). While
+this may have been an anomoly, an obsevation regarding the next coldest mean temperature, 48.96 degrees, exhibits a Theft crime count of 999875, followed by Battery (88379)
+and Criminal Damage (55011). As the average temperature increases, the magnitude of the highest frequency crime types increases in a positive manner, although this is not always the case, as
+obseved from Theft crime type count in 2010 with an average temperature of 54 degrees registering at 76,759 (although the max temperature registers at 62.89 degrees, so we can assume
+a warmer year overall).
+
+While a significant portion of the data aligns follows an increase in crime type as the mean temperature increases, a wide variety of variables exist by year, county, police department etc.that
+necessitate the implementation of fixed effects and an acknowledgment of ommitted variable bias. In summation, this data set would benefit from a regression analysis with fixed effects and the
+inclusion of additional ommitted variables; however, based on the magnitude of the data presented, we are able to make initial observations on fundamental relationships between crime and unemployment
+and weather and crime.
