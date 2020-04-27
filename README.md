@@ -50,7 +50,10 @@ The script should be run first, as its main function is to load the **Crimes_-_2
 
 
 1. Click this link: https://www.icloud.com/iclouddrive/0kV--11AFwLN5YWlWeJ74s_SA#Weather to access the project folder, 'Weather,  
-   Unemployment & Crime.' Download the following datasets  **Crimes_-_2001_to_present.csv**, **weather.csv** and **unemployment.csv** to   the github repository ramosn17/APA. 
+   Unemployment & Crime.' 
+   
+   Download the following datasets  **Crimes_-_2001_to_present.csv**, **weather.csv** and **unemployment.csv** to   the github  
+   repository ramosn17/APA. 
    
 1. Download/Clone the Github assignment and import the following script to Spyder: 'crime.py' from the ramons17/APA repository. 
 1. Import the following datafile into 'crimes.py':  pd.csv("Crimes_-_2001_to_present.csv")
