@@ -8,8 +8,20 @@ The input data is comprised of three .csv files entitled **unemployment.csv**, *
 
 
 ### Deliverables
-Five scripts will be generated on Spyder: 1. crime.py will review the data in the large .csv file and develop a datframe of select keys that will be utilized in the merge portion of the project. The script will also produce a .csv file entitled **df_final.csv**, which will include the selected keys for df conconated with another dataframe for the counts and percentages of the'Primary Type' (of crime) key 2. The 'graph.py' script covers basic data visualization for the dataFrame within 'crime.py'-"Primary Type" key through a Bar and Pie chart 3. The script 'weather.py' imports the **weather.csv** datafile and utilizes a groupby function to select relevant key 4&5. The 'unemployment.py' script imports the datafile into Spyder and 'crime_project_merge.py' merges the dataFrames into a final .csv file, **analysis_dataset.csv**.  
+Five scripts will be generated on Spyder: 
 
+1. 'crime.py' will review the data in the large .csv file and develop a datframe of select keys that will be utilized in the merge portion of the project. The script will also produce a .csv file entitled **df.csv**, which will include the selected keys for df conconated with another dataframe for the counts and percentages of the'Primary Type' (of crime) key 
+
+2. The script 'weather.py' imports the **weather.csv** datafile and utilizes a groupby function to select relevant key 4&5.
+3. The 'unemployment.py' script imports the datafile into Spyder and 
+4. 'crime_project_merge.py' merges the dataFrames into a final .csv file, **analysis_dataset.csv**. You do not need to run the script  
+    that generates the **df_final.csv** file. Run the merge function-once this loads, the groupby() function will run correctly. 
+
+
+5. The 'graph.py' script covers basic data visualization for the dataFrame within 'crime.py'-"Primary Type" key through a Bar and Pie  
+    
+    
+    
 ### Graph Deliverables
 
 The graph deliverables produced by the graph.py script will be as follows:
@@ -33,11 +45,15 @@ The graph deliverables produced by the graph.py script will be as follows:
 The merged datafile will provide the opportunity to integrate the .groupby() function to explore initial relationships for keys across columns, including Primary Crime, Crime Frequency, Dates, Unemployment Rate and Max/Min temperatures to discern any trends that occur by grouping the data. 
 
 ### Instructions
-A. Script:'crime.py'
+### Script:'crime.py'
 The script should be run first, as its main function is to load the **Crimes_-_2001_to_present.csv** datafile and create a dataframe, entitled 'df' with the following keys from the datafile: 'Year', 'Primary Type','Description', 'Location Description' and 'Arrest.' This dataframe will be used for merging in the 'crime_project_merge.py'. 
 
 
-1. Import modules. 
+1. Click this link: https://www.icloud.com/iclouddrive/0kV--11AFwLN5YWlWeJ74s_SA#Weather to access the project folder, 'Weather,  
+   Unemployment & Crime.' Download the following datasets  **Crimes_-_2001_to_present.csv**, **weather.csv** and **unemployment.csv** to   the github repository ramosn17/APA. 
+   
+1. Download/Clone the Github assignment and import the following script to Spyder: 'crime.py' from the ramons17/APA repository. 
+1. Import the following datafile into 'crimes.py':  pd.csv("Crimes_-_2001_to_present.csv")
 
 1. use pd.read_csv("filename", low memory= False) to import the crime statistic    
    datafile into variable 'crime_data.'Due to the size of the datafile, integrate low        
@@ -49,11 +65,6 @@ The script should be run first, as its main function is to load the **Crimes_-_2
 1. Review the columns in the datafile by attaching the .columns attribute to the end    of  
    the variable 'crime_data.' Print this attribute and label the action "Crime  
     Dataset Columns."
-   
-1. Integrate the .info attribute to the end of 'crime_data' to generate a summary of 
-   the datafile. This is useful as a quality assurance measure to ensure all of your    
-   information was succesfully imported. Print this action and the label "Crime 
-   Dataset Summary"
    
 1. To view the dataset with actual values, print the following attribute: 
          print(crime_data.head(5))
@@ -76,7 +87,10 @@ The script should be run first, as its main function is to load the **Crimes_-_2
    crime_data:
         [[Date', 'Primary Type','Description', 'Location Description','Arrest']]
         
-   Copy the dataframe 'df' to a .csv file entitled 'df.csv'. 
+ ### Important: 1.   Copy the dataframe 'df' to a .csv file entitled **df.csv**. Save this file into the ramosn17/APA
+                   folder-it will be imported for the merge function in the 'crime_project_merge.py' script. 
+                   
+   Optional--                
    
    1. To conduct an  analysis of one of the columns, set variable crime_type 
       equal to a new dataframe for 'Primary Type', which pertains to the most  
@@ -120,19 +134,20 @@ The script should be run first, as its main function is to load the **Crimes_-_2
 1. Print the first ten elements of crime_type_value_counts by adding the attribute .head(10)) 
    at the end of the dataframe 
    
+   
   
 ## Script 2: Weather.py
+1. Import the 'weather.py' script from the assignment folder in Spyder 
+1. If you have already downloaded **weather.csv**, run the pd.read_csv() call. 
+
+
 Slightly more involved, this script will load the **weather.csv** data, split the 'Date' key into 'Months' and 'Year', and create a grouped dataframe for the following keys: Year', 'Max TemperatureF', 'Mean TemperatureF','Min TemperatureF','Max Humidity', ' Mean Humidity', ' Min Humidity' and 'PrecipitationIn.' The dataframe, 'grouped_weather', will be copied to a .csv file called **grouped_weather.csv** which will be used for merging. 
 
-2. Import pandas as pd, numpy as np, import csv
-2. Print "Weather Dataset"
-2. Create variable 'weather' and set it equal to the  
-   pd.read_csv("weather.csv") 
 
 2. As 'Year' will be the key employed to merge the datafiles,    
    convert the date column into a format that is acceptable to  
    pandas. The result will be two additional columns entitled 
-   'Month' and 'Year'
+   'Month' and 'Year.' Run these three Datetime split commmands and the print(Weather.Year) command.
 
 2. Create a variable named 'grouped_weather' and set it equal to the following: 
 
@@ -142,82 +157,49 @@ Slightly more involved, this script will load the **weather.csv** data, split th
 2. Include the following column keys to the grouped_weather dataframe:        
    'Date','Max TemperatureF', 'Mean TemperatureF', 'Min TemperatureF','Max 
     Humidity', ' Mean Humidity', ' Min Humidity', 'PrecipitationIn']]
+
+2. Run the print().info and .columns commands
+2. Run the **grouped_weather.csv** command to write the grouped dataframe into a .csv file called "grouped_weather.csv". Save this file    to the ramosn17/APA folder, as it will be imported for the final script, 'crime_project_merge.py'
+    
     
 ## Script 3: Unemployment.py
-This script will import the unemployment datafile. 
+This script will import the **unemployment.csv** datafile. 
 
-3. import modules: pandas as pd, numpy as  np, import csv
-3. import the .csv file for unemployment data in Chicago by creating a variable, 'unemployment' and setting it equal to the function 
-   pd.read_csv("unemployment3.csv"
+3. Run  pd.read_csv("unemployment.csv")
     
 3. To review the complete result in the terminal, utilize the function 
    pd.set_option('display.max_columns', None).
    
 3. Print the first rows unemployment by adding the attribute .head(5))
 
-Script 4: crime_project_merge.py
+
+### Script 4: crime_project_merge.py
+
 This script will merge all of the dataframes on the 'Year' key and generate a final dataframe called 'analysis_dataset', which will then be copied to a .csv file, "crime_info2.csv." The groupby() function will then generate reference .csv files for exploratory analysis, with the most important grouping incorporating 'Mean TemperatureF', 'Primary Type', 'Year' and 'Max/Min' Temperatures.   
  Observations will be recorded in the Crime Results markdown. 
 
-4. Utilize the pd.read_csv function to import the new .csv file, df_final.csv  
-   and the original datafiles for weather and unemployment. 
-   
-    df_final = pd.read_csv("df.csv")
-    weather = pd.read_csv("weather.csv")
-    unemployment = pd.read_csv("unemployment3.csv") 
-   
- 4. Create a variable named 'analysis_dataset' and set it equal to the pd.merge   
-     function. Within this function, we will merge df_final and weather on the 
-    'Year' key. 
-    
- 4. Use the same dataframe and set it equal to pd.merge() for analysis_dataset 
-      and unemployment on the 'Year' key. 
+4. Utilize the pd.read_csv function to import the new .csv file, **df.csv**, **grouped_weather.csv** and **unemployment.csv** 
+
+4. Run the merge function to the 'analysis_dataset' variable. 
+4. Run the .head(5)) command to ensure the dataframes merged correctly. You do not need to compy the dataframe to a .csv file. The  
+   groupby() functions will run through the dataframe 'analysis_dataset.'
       
- 4. Write the dataframe into a .csv file titled "crime_info2.csv")
+4. The first groupby() command will group, sort and and export the dataframe to a .csv file. These files were utilized for the Results  
+   portion of the project and are not necessary to download. On to graphs!
+   
    
 ## Script 5 graphs.py
 
 ##Basic Data Visaulization utilizing Matplotlib to create bar and pie graphs for columns 'crime type' and 'location description' by crime count.
-
-5. import all modules from the 'crime.py' script, with the inclusion of the following: 
-
-import matplotlib.pyplot as plt; plt.rcdefaults()
-import seaborn as sns
-import plotly.graph_objs as go
-import plotly.express as px
-
-5. Import the "Crimes_-_2001_to_present.csv" by creating dataframe 'crime_type' and setting 
-   it equalto the pd.read_csv("filename")   
-   function 
  
- 5. Copy the 'crime_type_value_counts' dataframe block from  
-   'crime.py' script. 
-        crime_type = pd.DataFrame(df['Primary Type'].value_counts()).reset_index() 
-        crime_type.columns = ['Crime Type', 'Count']
-        crime_type_value_counts = pd.DataFrame(df['Primary Type'].value_counts().reset_index())
-        crime_type_value_counts.columns = ['Crime Type', 'Count']
-    crime_type_value_counts['Percentage'] = (crime_type_value_counts['Count']/crime_type_value_counts['Count'].sum()) * 100
-        print(crime_type_value_counts.head(10))
-        
-  5. The first bar graph will incorporate Crime Count in Chicaco by Type. For the graph, create a variable called 'objects'      and set it equal to the following elements: 'THEFT', 'BATTERY', 'CRIMINAL DAMAGE', 'ASSAULT', 'OTHER', 'DECEPTIVE  
+
+5.  Run the  pd.read_csv( "Crimes_-_2001_to_present.csv") command. 
+    
+5. The first bar graph will incorporate Crime Count in Chicaco by Type. For the graph, create a variable called 'objects'      and set it equal to the following elements: 'THEFT', 'BATTERY', 'CRIMINAL DAMAGE', 'ASSAULT', 'OTHER', 'DECEPTIVE  
      PRACT','NARCOTICS', 'BURGLARY', 'ROBBERY', 'MOTOR  THEFT'). On a new line, you can dictate font size by setting  
      fontsize equal to 10. 
      
-  5. To establish the arrangement of y_pos, set it equal to the following function:
-                 np.arange(len(objects))  
-                 
-    On the next line, integrate the values under the 'Count' column in correspondence with the order of the Crime Type in  
-   'Objects.'Refer to the output of  print(crime_type_value_counts.head(10)) for these values. 
-   
-  5. Implement the following commands to align the graph, plot x and y labels and create the graph title. 
-                  plt.bar(y_pos, performance, align='center', alpha=1.0)
-                  plt.xticks(y_pos, objects)
-                  plt.ylabel('Count')
-                  plt.title(' Crime Count in Chicago by Type')
-                  plt.show()  
-                  
-  5. Save bar graph as a .png file. 
-  
+
   ## Pie Chart
   
   5. Create a variable called 'labels' and set it equal to a list of crime types noted in the 'objects' variable for bar  
@@ -247,4 +229,4 @@ import plotly.express as px
    Plot the axis and display the graph by excercising the plot.axis('equal') and plt.show() functions. Save the graph as a 
    .png. 
    
- 6. The same steps can be applied to Crime Count by Location Description. Please see the code in graph.py for details. 
+ 6. Subsequent graphs are described in ##Graph Deliverables section of this Read.ME.  
