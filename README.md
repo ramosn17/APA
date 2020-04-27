@@ -14,7 +14,7 @@ Five scripts will be generated on Spyder: 1. crime.py will review the data in th
 
 The graph deliverables produced by the graph.py script will be as follows:
 
-**Primary_TypeBar.png** & **Primary_TypePie.png**: Plot output showing the ten highest crime types in Chicago in bar and pie chart formats. The bar chart will illustrate an actual count of crime types while the pie chart will exhibit crime type by percentage.  
+ **Primary_TypePie.png**: Plot output showing the ten highest crime types in Chicagopie chart format. The Teh G pie chart will exhibit crime type by percentage.  
  
 **Crime_LocationBar.png** & **Crime_LocationPie.png**: Plot output showing the most common location types that a crime has occured in Chicago using bar and pie chart formats. 
 
